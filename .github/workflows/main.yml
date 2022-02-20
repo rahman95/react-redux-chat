@@ -19,18 +19,9 @@ jobs:
             - run: yarn install --frozen-lockfile
             - run: yarn lint
 
-    test:
-        name: Run Functional Tests
-        timeout-minutes: 5
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - run: yarn install --frozen-lockfile
-            - run: yarn test:ui:run
-
     deploy:
         name: Build React
-        needs: [lint, test]
+        needs: [lint]
         timeout-minutes: 5
         runs-on: ubuntu-latest
         steps:
@@ -49,3 +40,15 @@ jobs:
                 enable-pull-request-comment: true
                 enable-commit-comment: true
                 overwrites-pull-request-comment: true
+
+    test:
+        name: Run Functional Tests
+        timeout-minutes: 5
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            env:
+              DELPOY_URL: ${{ jobs.deploy.outputs.deploy-url }}
+            - run: yarn install --frozen-lockfile
+            - run: yarn test:ui:run
+

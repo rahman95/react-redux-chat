@@ -9,7 +9,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "precommit": "pretty-quick --staged",
-    "lint": "eslint . --ext .js,.jsx",
+    "lint": "eslint ./src --ext .js,.jsx",
     "lint:fix": "npm run lint -- --fix",
     "test:ui:open": "cypress open",
     "test:ui:run": "cypress run --browser chrome"
