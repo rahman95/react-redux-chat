@@ -53,7 +53,8 @@ jobs:
           DELPOY_URL: ${{ needs.deploy.outputs.deploy-url }}
         steps:
             - uses: actions/checkout@v2
-
+            - run: printenv
+            - run: echo ${{ needs.deploy.outputs.deploy-url }}
             - run: yarn install --frozen-lockfile
             - run: yarn test:ui:run
 
