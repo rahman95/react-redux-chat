@@ -25,7 +25,7 @@ jobs:
         timeout-minutes: 5
         runs-on: ubuntu-latest
         outputs:
-          deploy-url: ${{ steps.netlify-deploy.outputs.deploy }}
+          deploy-url: ${{ steps.netlify-deploy.outputs.deploy-url }}
         steps:
             - uses: actions/checkout@v2
             - run: yarn install --frozen-lockfile
