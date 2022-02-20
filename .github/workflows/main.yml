@@ -45,10 +45,11 @@ jobs:
         name: Run Functional Tests
         timeout-minutes: 5
         runs-on: ubuntu-latest
+        env:
+          DELPOY_URL: ${{ jobs.deploy.outputs.deploy-url }}
         steps:
             - uses: actions/checkout@v2
-            - env:
-              DELPOY_URL: ${{ jobs.deploy.outputs.deploy-url }}
+
             - run: yarn install --frozen-lockfile
             - run: yarn test:ui:run
 
