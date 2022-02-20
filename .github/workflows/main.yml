@@ -47,7 +47,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            env:
+            - env:
               DELPOY_URL: ${{ jobs.deploy.outputs.deploy-url }}
             - run: yarn install --frozen-lockfile
             - run: yarn test:ui:run
