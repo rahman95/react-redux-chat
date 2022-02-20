@@ -24,11 +24,14 @@ jobs:
         needs: [lint]
         timeout-minutes: 5
         runs-on: ubuntu-latest
+        outputs:
+          deploy-url: ${{ steps.netlify-deploy.outputs.deploy }}
         steps:
             - uses: actions/checkout@v2
             - run: yarn install --frozen-lockfile
             - run: CI=false yarn build
-            - uses: nwtgck/actions-netlify@v1.2
+            - id: netlify-deploy
+              uses: nwtgck/actions-netlify@v1.2
               env:
                 NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
                 NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
