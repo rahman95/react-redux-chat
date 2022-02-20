@@ -1,0 +1,28 @@
+.title {
+  display: flex;
+  padding: 0 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.back-button {
+  background-color: var(--gray);
+  color: var(--black);
+  border: none;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.back-button:hover {
+  background-color: var(--gray-dark2);
+  color: var(--white);
+}
+
+.messages {
+  overflow: auto;
+  height: 35rem;
+}

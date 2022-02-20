@@ -1,0 +1,23 @@
+.message-container {
+  border: 1px solid var(--gray);
+  margin: 0;
+  padding: 1rem;
+  max-height: 45rem;
+  border: 1px solid var(--gray-light);
+  background-color: var(--white);
+  border-radius: 1rem;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .message-container {
+    margin: 2.5rem;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .message-container {
+    margin: 5rem;
+  }
+}

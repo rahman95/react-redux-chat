@@ -1,8 +1,11 @@
 :root {
   --bg-gray: #f8f7fa;
+  --gray: #e7e7e7;
   --gray-light: #e7e6ed;
   --gray-dark: #646464;
+  --gray-dark2: #919191;
   --white: #fff;
+  --black: #000;
 }
 
 html {
@@ -21,70 +24,4 @@ body {
 
 main {
   padding: 0 2rem;
-}
-
-.title {
-  margin-bottom: 1rem;
-  border-bottom: 1px solid var(--gray-light);
-}
-
-.message-container {
-  border: 1px solid gray;
-  margin: 5rem;
-  padding: 1rem;
-  max-height: 45rem;
-  border: 1px solid var(--gray-light);
-  background-color: var(--white);
-  border-radius: 1rem;
-}
-
-.messages {
-  overflow: auto;
-  height: 35rem;
-}
-
-.message {
-  display: flex;
-  flex-direction: row;
-  padding: 0 1rem;
-}
-
-.user {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 10%;
-}
-
-.avatar {
-  border-radius: 5rem;
-  width: 65%;
-}
-
-.text {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-  background-color: var(--bg-gray);
-  border-radius: 0 1rem 1rem 1rem;
-  padding: 1rem 0 0.15rem 1rem;
-  width: 90%;
-}
-
-.text span {
-  line-height: 1;
-  font-size: 0.65rem;
-  font-weight: 500;
-  color: var(--gray-dark);
-}
-
-.text .ts {
-  line-height: 1;
-  text-align: end;
-  padding: 0.25rem 0.75rem;
-}
-
-.text p {
-  line-height: 1.25;
-  font-size: 0.75rem;
 }

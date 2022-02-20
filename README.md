@@ -27,8 +27,8 @@ It has two publicly exposed functions `getMessages` and `getMembers`.
 ## Additional Tasks
 
 1. How could you improve the accessibility of your website?
-2. Enhance the solution by rendering the user's name under the message. Once clicked it will take you through to a grid page showing all the user's messages:
-    * Display the title of the message
-    * Display and format the timestamp of the message to be human readable, e.g. `1st Jan 2020 17:00`
-3. Can you make sure the design of your website is responsive?
+2. Enhance the solution by rendering the user's name under the message. Once clicked it will take you through to a grid page showing all the user's messages: ✅
+    * Display the title of the message ✅
+    * Display and format the timestamp of the message to be human readable, e.g. `1st Jan 2020 17:00` ✅
+3. Can you make sure the design of your website is responsive? ✅
 4. How would you go about automating and testing your application?

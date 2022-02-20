@@ -1,0 +1,99 @@
+.message {
+  display: flex;
+  flex-direction: row;
+  padding: 0 0.25rem;
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+.avatar {
+  border-radius: 5rem;
+  width: 25px;
+}
+
+.text {
+  display: flex;
+  font-size: 0.40rem;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  background-color: var(--bg-gray);
+  border-radius: 0 1rem 1rem 1rem;
+  padding: 0.5rem 0 0.075rem 0.5rem;
+  width: 90%;
+}
+
+.text .userName {
+  line-height: 1;
+  font-weight: 500;
+  color: var(--gray-dark);
+}
+
+.text .userName:hover {
+  text-decoration: underline;
+}
+
+.text .ts {
+  line-height: 1;
+  text-align: end;
+  padding: 0.25rem 0.75rem;
+}
+
+.text p {
+  line-height: 1.25;
+  font-size: 0.45rem;
+}
+
+ /* Small devices (portrait tablets and large phones, 600px and up) */
+ @media only screen and (min-width: 600px) {
+  .avatar {
+    width: 35px;
+  }
+
+  .text {
+    font-size: 0.45rem;
+  }
+
+  .text p {
+    font-size: 0.55rem;
+  }
+
+  .message {
+    padding: 0 0.5rem;
+  }
+
+  .user {
+    width: 15%;
+  }
+ }
+
+ /* Medium devices (landscape tablets, 768px and up) */
+ @media only screen and (min-width: 768px) {
+  .avatar {
+    width: 50px;
+  }
+
+  .text {
+    font-size: 0.65rem;
+    padding: 1rem 0 0.15rem 1rem;
+  }
+
+  .text p {
+    font-size: 0.75rem;
+  }
+
+  .message {
+    padding: 0 1rem;
+  }
+ }
+
+ /* Large devices (laptops/desktops, 992px and up) */
+ @media only screen and (min-width: 992px) {
+  .avatar {
+    width: 75px;
+  }
+ }
