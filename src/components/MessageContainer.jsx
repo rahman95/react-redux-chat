@@ -25,12 +25,19 @@ const MessageContainer = ({ loading, messages }) => {
     setActiveView(views.ALL_MESSAGES);
   };
 
-  const sortMessages = (messages) =>
-    messages
-      .sort((a, b) => dayjs(b.timestamp) - dayjs(a.timestamp))
-      .map((message, index) => <Message message={message} key={index} handleUserClick={handleUserClick} />);
+  const sortMessages = (messagesToSort) => messagesToSort
+    .sort((a, b) => dayjs(b.timestamp) - dayjs(a.timestamp))
+    .map((message) => (
+      <Message
+        message={message}
+        key={message.id}
+        handleUserClick={handleUserClick}
+      />
+    ));
 
-  const userMessages = activeUser ? messages.filter((message) => message.userId === activeUser.id) : [];
+  const userMessages = activeUser
+    ? messages.filter((message) => message.userId === activeUser.id)
+    : [];
 
   return (
     <div className="message-container">

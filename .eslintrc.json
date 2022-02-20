@@ -1,45 +1,44 @@
 {
   "root": true,
   "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module"
+    "ecmaVersion": 2020
   },
   "settings": {
     "react": {
-      "version": "detect"
+      "version": "17"
     }
   },
   "env": {
-    "es6": true,
-    "browser": true,
-    "jest": true,
-    "node": true
+    "browser": true
   },
-  "globals": {
-    "assert": false
-  },
-  "plugins": [
-    "prettier",
-    "jest"
-  ],
   "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended"
+    "airbnb"
   ],
   "rules": {
-    "prettier/prettier": [
+    // we are not using React prop types
+    "react/prop-types": "off",
+    "import/prefer-default-export": "warn",
+    "react/jsx-props-no-spreading": [
+      "warn",
+      {
+        "html": "enforce",
+        "custom": "enforce",
+        "explicitSpread": "ignore",
+        "exceptions": []
+      }
+    ],
+    "react/function-component-definition": [
       "error",
       {
-        "bracketSpacing": true,
-        "jsxBracketSameLine": false,
-        "parser": "babel",
-        "printWidth": 120,
-        "semi": true,
-        "singleQuote": true,
-        "tabWidth": 2,
-        "trailingComma": "es5",
-        "useTabs": false
+        "namedComponents": "arrow-function"
       }
-    ]
+    ],
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "no-promise-executor-return": "off",
+    "global-require": "off",
+    "default-param-last": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-underscore-dangle": "off"
   }
 }
