@@ -28,7 +28,7 @@ jobs:
             - run: yarn install --frozen-lockfile
             - run: yarn test:ui:run
 
-    build & deploy:
+    deploy:
         name: Build React
         needs: [lint, test]
         timeout-minutes: 5
