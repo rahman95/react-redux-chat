@@ -1,0 +1,22 @@
+name: Deploy
+
+on:
+    workflow_call
+
+env:
+    NODE_VERSION: 14
+    TERRAFORM_VERSION: 1.0.1
+
+    JFROG_ARTIFACTORY_TOKEN: ${{ secrets.jfrog-artifactory-token }}
+    GITHUB_TOKEN: ${{ secrets.github-token }}
+
+jobs:
+    lint:
+        name: Deploy to Netlify
+        timeout-minutes: 5
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Cache node-modules
+              uses: ./.github/actions/cache-node-modules
