@@ -43,6 +43,7 @@ jobs:
 
     test:
         name: Run Functional Tests
+        needs: [deploy]
         timeout-minutes: 5
         runs-on: ubuntu-latest
         env:
