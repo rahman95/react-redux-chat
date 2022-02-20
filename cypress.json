@@ -1,0 +1,12 @@
+
+{
+	"$schema": "https://on.cypress.io/cypress.schema.json",
+	"screenshotsFolder": "cypress_reports/screenshots",
+	"videosFolder": "cypress_reports/videos",
+  "supportFile": "tests/config/cypress/support/index.js",
+	"pluginsFile": "tests/config/cypress/plugins/index.js",
+  "fixturesFolder": "tests/config/cypress/fixtures",
+	"integrationFolder": "tests/ui",
+	"viewportWidth": 800,
+	"viewportHeight": 600
+}

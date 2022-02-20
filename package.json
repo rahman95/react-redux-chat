@@ -10,7 +10,9 @@
     "eject": "react-scripts eject",
     "precommit": "pretty-quick --staged",
     "lint": "eslint . --ext .js,.jsx",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "test:ui:open": "cypress open",
+    "test:ui:run": "cypress run --browser chrome"
   },
   "dependencies": {
     "connected-react-router": "6.8.0",
@@ -26,11 +28,13 @@
     "serve": "11.3.0"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^8.0.2",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.2",
     "enzyme-to-json": "3.4.4",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "19.0.4",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jest": "23.8.2",
     "eslint-plugin-jsx-a11y": "^6.5.1",
@@ -40,6 +44,9 @@
     "prettier": "2.0.4",
     "react-scripts": "3.4.1",
     "react-test-renderer": "16.13.1"
+  },
+  "optionalDependencies": {
+    "cypress": "^9.5.0"
   },
   "browserslist": [
     ">0.2%",

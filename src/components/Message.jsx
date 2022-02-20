@@ -17,7 +17,7 @@ const Message = ({ message, handleUserClick }) => {
   const avatar = user?.avatar || DEFAULT_AVATAR;
 
   return (
-    <div className="message" title={email}>
+    <div className="message" title={email} data-testId="message">
       <div className="user">
         <img className="avatar" src={avatar} alt="Avatar of User" />
       </div>
