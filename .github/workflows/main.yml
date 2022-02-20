@@ -49,12 +49,9 @@ jobs:
         needs: [deploy]
         timeout-minutes: 5
         runs-on: ubuntu-latest
-        env:
-          DELPOY_URL: ${{ needs.deploy.outputs.deploy-url }}
         steps:
             - uses: actions/checkout@v2
-            - run: printenv
-            - run: echo ${{ needs.deploy.outputs.deploy-url }}
+            - run: echo Deployed Site - ${{ needs.deploy.outputs.deploy-url }}
             - run: yarn install --frozen-lockfile
-            - run: yarn test:ui:run
+            - run: DELPOY_URL=${{ needs.deploy.outputs.deploy-url }} yarn test:ui:run
 
