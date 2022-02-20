@@ -78,8 +78,13 @@ main {
   color: var(--gray-dark);
 }
 
+.text .ts {
+  line-height: 1;
+  text-align: end;
+  padding: 0.25rem 0.75rem;
+}
+
 .text p {
   line-height: 1.25;
   font-size: 0.75rem;
-
 }
