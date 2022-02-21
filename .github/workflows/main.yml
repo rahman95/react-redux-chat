@@ -20,13 +20,13 @@ jobs:
             - run: yarn lint
 
     unit-test:
-        name: Lint JS
+        name: Run Unit Tests
         timeout-minutes: 5
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
             - run: yarn install --frozen-lockfile
-            - run: yarn lint
+            - run: yarn test
 
     deploy:
         name: Deploy to Netlify
