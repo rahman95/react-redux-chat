@@ -1,0 +1,59 @@
+name: Main Workflow
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+    NODE_VERSION: 14
+
+jobs:
+    lint:
+        name: Lint JS
+        timeout-minutes: 5
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - run: yarn install --frozen-lockfile
+            - run: yarn lint
+
+    deploy:
+        name: Deploy to Netlify
+        needs: [lint]
+        timeout-minutes: 5
+        runs-on: ubuntu-latest
+        outputs:
+          deploy-url: ${{ steps.netlify-deploy.outputs.deploy-url }}
+        steps:
+            - uses: actions/checkout@v2
+            - run: yarn install --frozen-lockfile
+            - run: CI=false yarn build
+            - id: netlify-deploy
+              uses: nwtgck/actions-netlify@v1.2
+              env:
+                NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+                NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+              with:
+                publish-dir: './build'
+                production-branch: master
+                github-token: ${{ secrets.GITHUB_TOKEN }}
+                deploy-message: "Deploy from GitHub Actions"
+                enable-pull-request-comment: true
+                enable-commit-comment: true
+                overwrites-pull-request-comment: true
+
+    test:
+        name: Run Functional Tests
+        needs: [deploy]
+        timeout-minutes: 5
+        runs-on: ubuntu-latest
+        env:
+          DEPLOY_URL: ${{ needs.deploy.outputs.deploy-url }}
+        steps:
+            - uses: actions/checkout@v2
+            - run: echo Deployed Site - ${{ env.DEPLOY_URL }}
+            - run: yarn install --frozen-lockfile
+            - run: yarn test:ui:run --env deploy_url=${{ env.DEPLOY_URL }}
+
