@@ -33,7 +33,7 @@ It has two publicly exposed functions `getMessages` and `getMembers`.
 3. Can you make sure the design of your website is responsive? ✅
 4. How would you go about automating and testing your application? ✅
   * Tests via Cypress ✅
-  * Pipeline via GHA
-    * Lint
-    * Test
-    * Deploy
+  * Pipeline via GHA ✅
+    * Lint ✅
+    * Test ✅
+    * Deploy ✅
